@@ -1,27 +1,27 @@
 <template>
-  <div class="ctr">
-    <transition name="fade" mode="out-in">
-    
-    <questions v-if="questionsAnswered < questions.length" 
-      :questions="questions"
-      :questionsAnswered="questionsAnswered"
-      @question-answered="questionsAnswered1"
-    />
-    <results 
-    v-else
-      :totalCorrect="totalCorrect"
-      :results="results"
-    />
-    </transition>
-
-    <button 
-      type="button" 
-      class="reset-btn"
-      @click="resetQuestions"
-      v-if="questionsAnswered === questions.length"
-    >
-      Reset</button>
-  </div>
+    <div class="ctr">
+      <transition name="fade" mode="out-in">
+      
+      <questions v-if="questionsAnswered < questions.length" 
+        :questions="questions"
+        :questionsAnswered="questionsAnswered"
+        @question-answered="questionsAnswered1"
+      />
+      <results 
+      v-else
+        :totalCorrect="totalCorrect"
+        :results="results"
+      />
+      </transition>
+  
+      <button 
+        type="button" 
+        class="reset-btn"
+        @click="resetQuestions"
+        v-if="questionsAnswered === questions.length"
+      >
+        Reset</button>
+    </div>
 </template>
 <script>
 import Questions from './components/Questions.vue'
